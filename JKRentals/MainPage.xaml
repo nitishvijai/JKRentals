@@ -12,7 +12,7 @@
 
         <Label Text="We're glad you've chosen JK Rentals for your next apartment rental solution. Click on the button below to get started on your application." HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#FFFFFF" Padding="0,10,0,0" />
 
-        <Button Text="Start" ScaleX="1" Padding="0" Margin="50,40,50,0" />
+        <Button x:Name="StartButton" Text="Start" ScaleX="1" Padding="0" Margin="50,40,50,0" Clicked="StartButton_Clicked"/>
     </StackLayout>
 
 </ContentPage>
