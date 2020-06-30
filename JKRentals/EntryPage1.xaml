@@ -31,33 +31,33 @@
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <Label Text="First Name:" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" />
-            <Entry Placeholder="Required" Grid.Row="0" Grid.Column="2" />
+            <Entry x:Name="FName" Placeholder="Required" Grid.Row="0" Grid.Column="2" />
             
             <Label Text="Middle Initial:" Grid.Row="1" Grid.Column="1" VerticalTextAlignment = "Center"/>
-            <Entry Placeholder="Optional" Grid.Row="1" Grid.Column="2" />
+            <Entry x:Name="MI" Placeholder="Optional" Grid.Row="1" Grid.Column="2" />
             
             <Label Text="Last Name:" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center" />
-            <Entry Placeholder="Required" Grid.Row="2" Grid.Column="2" />
+            <Entry x:Name="LName" Placeholder="Required" Grid.Row="2" Grid.Column="2" />
             
             <Label Text="Social Security #:" Grid.Row="3" Grid.Column="1" VerticalTextAlignment = "Center"/>
-            <Entry Grid.Row="3" Grid.Column="2" Keyboard="Numeric" Placeholder="XXX-XX-XXXX (add dashes)" />
+            <Entry x:Name="SSN" Grid.Row="3" Grid.Column="2" Keyboard="Default" Placeholder="XXX-XX-XXXX (add dashes)" />
 
             <Label Text="Date of Birth: " Grid.Row="4" Grid.Column="1" VerticalTextAlignment="Center" />
-            <DatePicker Grid.Row="4" Grid.Column="2" Date="1985-01-01"/>
+            <DatePicker x:Name="DOB" Grid.Row="4" Grid.Column="2" Date="1985-01-01"/>
 
             <Label Text="Driver's License #: " Grid.Row="5" Grid.Column="1" VerticalTextAlignment="Center" />
-            <Entry Grid.Row="5" Grid.Column="2" Placeholder="Required" />
+            <Entry x:Name="DLN" Grid.Row="5" Grid.Column="2" Placeholder="Required" />
 
             <Label Text="" Grid.Row="6" Grid.Column="1" VerticalTextAlignment="Center" />
 
             <Label Text="Phone Number: " Grid.Row="7" Grid.Column="1" VerticalTextAlignment="Center" />
-            <Entry Grid.Row="7" Grid.Column="2" Placeholder="XXX-XXX-XXXX (required)" Keyboard="Telephone" />
+            <Entry x:Name="PhoneNo" Grid.Row="7" Grid.Column="2" Placeholder="XXX-XXX-XXXX (required)" Keyboard="Telephone" />
 
             <Label Text="Alternate Phone: " Grid.Row="8" Grid.Column="1" VerticalTextAlignment="Center" />
-            <Entry Grid.Row="8" Grid.Column="2" Placeholder="XXX-XXX-XXXX (optional)" Keyboard="Telephone" />
+            <Entry x:Name="AltPhoneNo" Grid.Row="8" Grid.Column="2" Placeholder="XXX-XXX-XXXX (optional)" Keyboard="Telephone" />
 
             <Label Text="Email: " Grid.Row="9" Grid.Column="1" VerticalTextAlignment="Center" />
-            <Entry Grid.Row="9" Grid.Column="2" Placeholder="Required" Keyboard="Email" />
+            <Entry x:Name="Email" Grid.Row="9" Grid.Column="2" Placeholder="Required" Keyboard="Email" />
 
             <Label Text="" Grid.Row="10" Grid.Column="1" VerticalTextAlignment="Center" />
 
