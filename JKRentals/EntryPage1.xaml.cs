@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using JKRentals.Models;
-using System.Diagnostics;
+
 
 namespace JKRentals
 {
@@ -30,6 +31,11 @@ namespace JKRentals
         private async void ReturnBtn_Clicked(object sender, EventArgs e)
         {
             await DisplayAlert("Test Stub", "This feature has not been implemented yet. However, you would go back to the previous screen.", "OK");
+
+            // save current application to text file
+
+            // return to previous page
+            await Navigation.PopAsync();
         }
 
         public void SaveData()
@@ -90,7 +96,7 @@ namespace JKRentals
                     return;
                 }
 
-                await DisplayAlert("Test Stub", "This feature has not been implemented yet. At this point, you should be able to review your answers on a different page.", "OK");
+                await Navigation.PushAsync(new ReviewPage());
             }
             else {  /* discard action and do nothing */  }
         }
