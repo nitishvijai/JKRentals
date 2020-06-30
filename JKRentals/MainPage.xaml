@@ -4,13 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="JKRentals.MainPage" BackgroundColor="#2198D9">
+             x:Class="JKRentals.MainPage" BackgroundColor="#1395DD">
 
     <StackLayout Visual="Material" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <!-- Place new controls here -->
         <Label Text="Welcome to JK Rentals!" FontSize="Title" FontAttributes="Bold" TextColor="#FFFFFF" HorizontalOptions="Center" />
 
-        <Label Text="We're glad you've chosen JK Rentals for your next apartment rental solution. Click on the button below to get started on your application." HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#FFFFFF" Padding="0,10,0,0" />
+        <Label Text="We're glad you've chosen JK Rentals for your next apartment rental solution. Click on the button below to get started on your application." HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#FFFFFF" Padding="0,10,0,0" Margin="20,0" />
 
         <Button x:Name="StartButton" Text="Start" ScaleX="1" Padding="0" Margin="50,40,50,0" Clicked="StartButton_Clicked"/>
     </StackLayout>

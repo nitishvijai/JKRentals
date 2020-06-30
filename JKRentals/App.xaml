@@ -6,6 +6,9 @@
              mc:Ignorable="d"
              x:Class="JKRentals.App">
     <Application.Resources>
-
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#1395DD"/>
+            <Setter Property="BarTextColor" Value="White"/>
+        </Style>
     </Application.Resources>
 </Application>

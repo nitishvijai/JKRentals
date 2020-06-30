@@ -21,5 +21,15 @@ namespace JKRentals
         {
             NumValue.Text = StepperValue.Value.ToString();
         }
+
+        private void ReturnBtn_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SubmitBtn_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
