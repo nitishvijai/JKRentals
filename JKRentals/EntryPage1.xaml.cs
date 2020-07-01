@@ -9,7 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using JKRentals.Models;
-
+using System.IO;
 
 namespace JKRentals
 {
@@ -18,9 +18,21 @@ namespace JKRentals
     {
         ApplicationEntry app = new ApplicationEntry();
 
-        public EntryPage1()
+        string fileName;
+
+        public EntryPage1(bool newApp, string filename)
         {
             InitializeComponent();
+            if (newApp)
+            {
+                string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+                fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "tempJKR_" + timestamp + "_app.txt");
+            }
+            else
+            {
+                // read from the application filename here
+
+            }
         }
 
 
@@ -34,6 +46,8 @@ namespace JKRentals
             await DisplayAlert("Test Stub", "This feature has not been implemented yet. However, you would go back to the previous screen.", "OK");
 
             // save current application to text file
+            SaveData();
+            WriteToTempFile();
 
             // return to previous page
             await Navigation.PopAsync();
@@ -57,6 +71,25 @@ namespace JKRentals
             app.Email = Email.Text;
 
             app.NoInhabitants = Convert.ToInt32(NumValue.Text);
+
+            app.AppFilename = fileName;
+        }
+
+        public void WriteToTempFile()
+        {
+            using (var writer = new StreamWriter(File.Create(fileName)))
+            {
+                writer.WriteLine(app.FirstName + '\n' +
+                                        app.MiddleInitial + '\n' +
+                                        app.LastName + '\n' +
+                                        app.SocSecNo + '\n' +
+                                        app.DOB + '\n' +
+                                        app.DriverLicenseNo + '\n' +
+                                        app.PhoneNo + '\n' +
+                                        app.AltPhoneNo + '\n' +
+                                        app.Email + '\n' +
+                                        app.NoInhabitants + '\n');
+            }
         }
 
         private async void SubmitBtn_Clicked(object sender, EventArgs e)
@@ -67,6 +100,9 @@ namespace JKRentals
             {
                 // save data and move on
                 SaveData();
+                WriteToTempFile();
+                Debug.WriteLine(app.AppFilename);
+
                 bool allgood = app.CheckForCompletion();
 
                 if (!allgood)

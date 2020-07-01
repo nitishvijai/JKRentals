@@ -20,7 +20,7 @@ namespace JKRentals
 
         private async void StartButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new EntryPage1());
+            await Navigation.PushAsync(new EntryPage1(true, null));
         }
     }
 }
