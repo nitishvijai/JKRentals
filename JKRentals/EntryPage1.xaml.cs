@@ -23,6 +23,7 @@ namespace JKRentals
             InitializeComponent();
         }
 
+
         private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             NumValue.Text = StepperValue.Value.ToString();
@@ -96,7 +97,9 @@ namespace JKRentals
                     return;
                 }
 
-                await Navigation.PushAsync(new ReviewPage());
+                await Navigation.PushAsync(new ReviewPage { 
+                    BindingContext = app
+                });
             }
             else {  /* discard action and do nothing */  }
         }

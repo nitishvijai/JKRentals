@@ -12,10 +12,8 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*" />
-                <ColumnDefinition Width="0.5*" />
-                <ColumnDefinition Width="2.0*" />
-                <ColumnDefinition Width="1.5*" />
-                <ColumnDefinition Width="1.0*" />
+                <ColumnDefinition Width="3.0*" />
+                <ColumnDefinition Width="4.5*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*" />
@@ -40,41 +38,39 @@
             </Grid.RowDefinitions>
             <Label Text="Here's a summary of your application. If you'd like to change anything, tap on the Back button above. When you're ready to submit, tap on the Submit button." Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Margin="15,15,15,0" />
 
-            <Label Text="First Name: " Grid.Column="2" Grid.Row="1" />
-            <Label Text="Test Name" Grid.Column="3" Grid.Row="1" />
+            <Label Text="First Name: " Grid.Column="1" Grid.Row="1" />
+            <Label Text="{Binding FirstName}" Grid.Column="2" Grid.Row="1" />
 
-            <Label Text="Middle Initial: " Grid.Column="2" Grid.Row="2" />
-            <Label Text="Test Name" Grid.Column="3" Grid.Row="2" />
+            <Label Text="Middle Initial: " Grid.Column="1" Grid.Row="2" />
+            <Label Text="{Binding MI}" Grid.Column="2" Grid.Row="2" />
 
-            <Label Text="Last Name: " Grid.Column="2" Grid.Row="3" />
-            <Label Text="Test Name" Grid.Column="3" Grid.Row="3" />
+            <Label Text="Last Name: " Grid.Column="1" Grid.Row="3" />
+            <Label Text="{Binding LastName}" Grid.Column="2" Grid.Row="3" />
 
-            <Label Text="Social Security #: " Grid.Column="2" Grid.Row="4" Margin="0" Padding="0" />
-            <Label Text="Test Name" Grid.Column="3" Grid.Row="4" />
+            <Label Text="Social Security #: " Grid.Column="1" Grid.Row="4" Margin="0" Padding="0" />
+            <Label Text="{Binding SocSecNo}" Grid.Column="2" Grid.Row="4" />
 
-            <Label Text="Date of Birth: " Grid.Column="2" Grid.Row="5" />
-            <Label Text="Test Name" Grid.Column="3" Grid.Row="5" />
+            <Label Text="Date of Birth: " Grid.Column="1" Grid.Row="5" />
+            <Label Text="{Binding DOB, StringFormat='{0:MMMM dd, yyyy}'}" Grid.Column="2" Grid.Row="5" />
 
-            <Label Text="Driver License #: " Grid.Column="2" Grid.Row="6" />
-            <Label Text="Test Name" Grid.Column="3" Grid.Row="6" />
+            <Label Text="Driver License #: " Grid.Column="1" Grid.Row="6" />
+            <Label Text="{Binding DriverLicenseNo}" Grid.Column="2" Grid.Row="6" />
 
-            <Label Text="" Grid.Column="2" Grid.Row="7" />
+            <Label Text="" Grid.Column="1" Grid.Row="7" />
 
-            <Label Text="Phone Number: " Grid.Column="2" Grid.Row="8" />
-            <Label Text="Test Name" Grid.Column="3" Grid.Row="8" />
+            <Label Text="Phone Number: " Grid.Column="1" Grid.Row="8" />
+            <Label Text="{Binding PhoneNo}" Grid.Column="2" Grid.Row="8" />
 
-            <Label Text="Alt. Phone Number: " Grid.Column="2" Grid.Row="9" />
-            <Label Text="Test Name" Grid.Column="3" Grid.Row="9" />
+            <Label Text="Alt. Phone #: " Grid.Column="1" Grid.Row="9" />
+            <Label Text="{Binding AltPhoneNo}" Grid.Column="2" Grid.Row="9" />
 
-            <Label Text="" Grid.Column="2" Grid.Row="10" />
+            <Label Text="Email: " Grid.Column="1" Grid.Row="10" />
+            <Label Text="{Binding Email}" Grid.Column="2" Grid.Row="10" />
 
-            <Label Text="Email: " Grid.Column="2" Grid.Row="11" />
-            <Label Text="Test Name" Grid.Column="3" Grid.Row="11" />
+            <Label Text="" Grid.Column="1" Grid.Row="11" />
 
-            <Label Text="" Grid.Column="2" Grid.Row="12" />
-
-            <Label Text="# of Inhabitants: " Grid.Column="2" Grid.Row="13" />
-            <Label Text="Test Name" Grid.Column="3" Grid.Row="13" />
+            <Label Text="# of Inhabitants: " Grid.Column="1" Grid.Row="12" />
+            <Label Text="{Binding NoInhabitants}" Grid.Column="2" Grid.Row="12" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
