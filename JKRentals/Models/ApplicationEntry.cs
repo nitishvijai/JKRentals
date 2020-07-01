@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace JKRentals.Models
 {
-    class ApplicationEntry
+    public class ApplicationEntry
     {
         public ApplicationEntry()
         {
@@ -31,6 +31,8 @@ namespace JKRentals.Models
         public string Email { get; set; }
 
         public int NoInhabitants { get; set; }
+
+        public string AppFilename { get; set; }
 
         // Application checks
         private Boolean Pg1Complete { get; set; }

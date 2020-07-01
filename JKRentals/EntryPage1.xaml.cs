@@ -97,9 +97,7 @@ namespace JKRentals
                     return;
                 }
 
-                await Navigation.PushAsync(new ReviewPage { 
-                    BindingContext = app
-                });
+                await Navigation.PushAsync(new ReviewPage(app));
             }
             else {  /* discard action and do nothing */  }
         }
