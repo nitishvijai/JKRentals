@@ -38,6 +38,15 @@ namespace JKRentals.Models
 
         public DateTime MoveDate { get; set; }
 
+        // Current address variables
+        public string CurrentAddress { get; set; }
+        public string CurrentCSZ { get; set; }
+        public DateTime CurrMoveDate { get; set; }
+        public string CurrLandlordName { get; set; }
+        public string CurrLandlordPhone { get; set; }
+        public int CurrRent { get; set; }
+        public string CurrMoveReason { get; set; }
+
         // Application checks
         private Boolean Pg1Complete { get; set; }
         private Boolean Pg2Complete { get; set; }

@@ -16,7 +16,7 @@ namespace JKRentals
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EntryPage1 : ContentPage
     {
-        ApplicationEntry app = new ApplicationEntry();
+        public ApplicationEntry app = new ApplicationEntry();
 
         string fileName;
 
@@ -129,7 +129,7 @@ namespace JKRentals
                     return;
                 }
 
-                await Navigation.PushAsync(new EntryPage2());
+                await Navigation.PushAsync(new EntryPage2(this));
             
         }
     }

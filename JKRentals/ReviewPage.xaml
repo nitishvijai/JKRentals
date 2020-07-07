@@ -9,10 +9,11 @@
         <ToolbarItem Text="Submit" Clicked="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <Grid>
+        <ScrollView>
+          <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*" />
-                <ColumnDefinition Width="3.0*" />
+                <ColumnDefinition Width="4.5*" />
                 <ColumnDefinition Width="4.5*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -44,7 +45,7 @@
             <Label Text="Middle Initial: " Grid.Column="1" Grid.Row="2" />
             <Label Text="{Binding MI}" Grid.Column="2" Grid.Row="2" />
 
-            <Label Text="Last Name: " Grid.Column="1" Grid.Row="3" />
+            <Label Text="Last Name: " Grid.Column="1" Grid.Row="3"  />
             <Label Text="{Binding LastName}" Grid.Column="2" Grid.Row="3" />
 
             <Label Text="Social Security #: " Grid.Column="1" Grid.Row="4" Margin="0" Padding="0" />
@@ -61,16 +62,24 @@
             <Label Text="Phone Number: " Grid.Column="1" Grid.Row="8" />
             <Label Text="{Binding PhoneNo}" Grid.Column="2" Grid.Row="8" />
 
-            <Label Text="Alt. Phone #: " Grid.Column="1" Grid.Row="9" />
+            <Label Text="Alt. Phone #: " Grid.Column="1" Grid.Row="9"  />
             <Label Text="{Binding AltPhoneNo}" Grid.Column="2" Grid.Row="9" />
 
             <Label Text="Email: " Grid.Column="1" Grid.Row="10" />
-            <Label Text="{Binding Email}" Grid.Column="2" Grid.Row="10" Grid.RowSpan="2"/>
+            <Label Text="{Binding Email}" Grid.Column="2" Grid.Row="10" Grid.RowSpan="2" />
 
             <Label Text="" Grid.Column="1" Grid.Row="11" />
 
             <Label Text="# of Inhabitants: " Grid.Column="1" Grid.Row="12" />
             <Label Text="{Binding NoInhabitants}" Grid.Column="2" Grid.Row="12" />
+
+            <Label Text="Address Applying For: " Grid.Column="1" Grid.Row="14" />
+            <Label Text="{Binding DesiredAddress}" Grid.Column="2" Grid.Row="14"  Grid.RowSpan="2"/>
+
+            <Label Text="Desired Move-In Date: " Grid.Column="1" Grid.Row="16" />
+            <Label Text="{Binding MoveDate, StringFormat='{0:MMMM dd, yyyy}'}" Grid.Column="2" Grid.Row="16" />
         </Grid>
+      </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>

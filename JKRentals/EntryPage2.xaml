@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="JKRentals.EntryPage2" NavigationPage.HasBackButton="True" NavigationPage.HasNavigationBar="True" Title="Rental Information (2 of 7)" NavigationPage.BackButtonTitle="Page 1">
+             x:Class="JKRentals.EntryPage2" NavigationPage.HasBackButton="True" NavigationPage.HasNavigationBar="True" Title="Rental Information Part 1 (2 of 7)" NavigationPage.BackButtonTitle="Page 1">
     <ContentPage.Content>
         <Grid Margin="0">
             <Grid.ColumnDefinitions>
@@ -41,7 +41,7 @@
             <Label Text="Desired Move-In Date: " Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center" />
             <DatePicker x:Name="DesiredDate" Grid.Row="1" Grid.Column="2" MinimumDate="2020-07-31"/>
 
-            <Label Text="Please include ALL addresses you have lived at for the past 5 years. If you have more, please note that down in the Additional section at the end." Grid.Row="2" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="3" Margin="0" />
+            <Label Text="Please include ALL addresses you have lived at for the past 5 years. If you have more, you will be able to enter them in the next pages." Grid.Row="2" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,0,0,5" />
 
             <Label Text="" Grid.Row="5" Grid.Column="1" />
 
@@ -66,10 +66,8 @@
             <Label Text="Reason for Moving: " Grid.Row="12" Grid.Column="1" VerticalTextAlignment="Center" />
             <Entry x:Name="MoveReason" Placeholder="Required" Grid.Row="12" Grid.Column="2" />
 
-            <Label Text="You will be able to enter more addresses in the next few pages." Grid.Row="16" Grid.Column="1" Grid.ColumnSpan="3" />
-
             <Button x:Name="ReturnBtn" Text="Save for Later" Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="2" />
-            <Button x:Name="SubmitBtn" Text="Continue (Submit Debug)" Grid.Row="18" Grid.Column="1" Grid.ColumnSpan="2" />
+            <Button x:Name="SubmitBtn" Text="Continue (Submit Debug)" Grid.Row="18" Grid.Column="1" Grid.ColumnSpan="2" Clicked="SubmitBtn_Clicked"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
