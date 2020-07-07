@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="JKRentals.EntryPage1" NavigationPage.HasBackButton="True" NavigationPage.BackButtonTitle="Start Screen" NavigationPage.HasNavigationBar="True" Title="Personal Information (1 of 6)">
+             x:Class="JKRentals.EntryPage1" NavigationPage.HasBackButton="True" NavigationPage.BackButtonTitle="Start Screen" NavigationPage.HasNavigationBar="True" Title="Personal Information (1 of 7)">
     <ContentPage.Content>
         <Grid>
             <Grid.ColumnDefinitions>
