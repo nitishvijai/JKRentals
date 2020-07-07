@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="JKRentals.EntryPage1" NavigationPage.HasBackButton="True" NavigationPage.BackButtonTitle="Start Screen" NavigationPage.HasNavigationBar="True" Title="Personal Information (1 of 7)">
+             x:Class="JKRentals.EntryPage1" NavigationPage.HasBackButton="True" NavigationPage.BackButtonTitle="Start Screen" NavigationPage.HasNavigationBar="True" Title="Personal Information (1 of 6)">
     <ContentPage.Content>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -40,7 +40,7 @@
             <Entry x:Name="LName" Placeholder="Required" Grid.Row="2" Grid.Column="2" />
             
             <Label Text="Social Security #:" Grid.Row="3" Grid.Column="1" VerticalTextAlignment = "Center"/>
-            <Entry x:Name="SSN" Grid.Row="3" Grid.Column="2" Keyboard="Default" Placeholder="XXX-XX-XXXX (add dashes)" />
+            <Entry x:Name="SSN" Grid.Row="3" Grid.Column="2" Keyboard="Telephone" Placeholder="XXX-XX-XXXX (add dashes)" />
 
             <Label Text="Date of Birth: " Grid.Row="4" Grid.Column="1" VerticalTextAlignment="Center" />
             <DatePicker x:Name="DOB" Grid.Row="4" Grid.Column="2" Date="1985-01-01"/>

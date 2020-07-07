@@ -17,6 +17,8 @@ namespace JKRentals.Models
             AppComplete = false;
         }
 
+        public int CurrentPage { get; set; }
+
         public string FirstName { get; set; }
         public string MiddleInitial { get; set; }
         public string LastName { get; set; }
@@ -48,6 +50,27 @@ namespace JKRentals.Models
         public int CurrRent { get; set; }
         public string CurrMoveReason { get; set; }
 
+        // Previous address variables
+        public string PrevAddress1 { get; set; }
+        public string PrevCSZ1 { get; set; }
+        public DateTime PrevMoveDate1 { get; set; }
+        public DateTime PrevMoveOutDate1 { get; set; }
+        public string PrevLandlordName1 { get; set; }
+        public string PrevLandlordPhone1 { get; set; }
+        public int PrevRent1 { get; set; }
+
+        public string PrevAddress2 { get; set; }
+        public string PrevCSZ2 { get; set; }
+        public DateTime PrevMoveDate2 { get; set; }
+        public DateTime PrevMoveOutDate2 { get; set; }
+        public string PrevLandlordName2 { get; set; }
+        public string PrevLandlordPhone2 { get; set; }
+        public int PrevRent2 { get; set; }
+
+
+
+
+
         // Application checks
         private Boolean Pg1Complete { get; set; }
         private Boolean Pg2Complete { get; set; }
@@ -55,22 +78,48 @@ namespace JKRentals.Models
 
         public Boolean CheckForCompletion()
         {
-            string[] requiredFields = { FirstName, LastName, SocSecNo, DriverLicenseNo, PhoneNo, Email };
+            string[] requiredFields;
 
-            foreach (string item in requiredFields)
+            if (CurrentPage == 1)
             {
-                if (string.IsNullOrEmpty(item) || string.IsNullOrWhiteSpace(item))
+                requiredFields = new string[]{ FirstName, LastName, SocSecNo, DriverLicenseNo, PhoneNo, Email };
+
+                foreach (string item in requiredFields)
                 {
-                    Pg1Complete = false;
-                    AppComplete = false;
-                    return false;
+                    if (string.IsNullOrEmpty(item) || string.IsNullOrWhiteSpace(item))
+                    {
+                        Pg1Complete = false;
+                        AppComplete = false;
+                        return false;
+                    }
                 }
+
+                Pg1Complete = true;
+
+                return true;
+            }
+            else if (CurrentPage == 2)
+            {
+                requiredFields = new string[] { DesiredAddress, CurrentAddress, CurrentCSZ, CurrMoveReason };
+
+                foreach (string item in requiredFields)
+                {
+                    if (string.IsNullOrEmpty(item) || string.IsNullOrWhiteSpace(item))
+                    {
+                        Pg2Complete = false;
+                        AppComplete = false;
+                        return false;
+                    }
+                }
+
+                Pg2Complete = true;
+                AppComplete = true;
+
+                return true;
             }
 
-            Pg1Complete = true;
-            AppComplete = true;
-
-            return true;
+            return AppComplete;
+            
         }
 
         public bool IsSocialSecurityNumber(string value)

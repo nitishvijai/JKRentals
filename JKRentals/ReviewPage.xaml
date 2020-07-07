@@ -75,6 +75,39 @@
                         <TextCell Text="Reason for Moving"
                                   Detail="{Binding CurrMoveReason}" />
 
+                        <TextCell Text="" />
+                        <TextCell Text="Previous Address"
+                                  Detail="{Binding PrevAddress1}" />
+                        <TextCell Text="City, State, ZIP"
+                                  Detail="{Binding PrevCSZ1}" />
+                        <TextCell Text="Move-In Date"
+                                  Detail="{Binding PrevMoveDate1, StringFormat='{0:MMMM dd, yyyy}'}" />
+                        <TextCell Text="Move-Out Date"
+                                  Detail="{Binding PrevMoveOutDate1, StringFormat='{0:MMMM dd, yyyy}'}" />
+                        <TextCell Text="Landlord's Name"
+                                  Detail="{Binding PrevLandlordName1}" />
+                        <TextCell Text="Landlord's Phone #"
+                                  Detail="{Binding PrevLandlordPhone1}" />
+                        <TextCell Text="Monthly Rent"
+                                  Detail="{Binding PrevRent1}" />
+
+                        <TextCell Text="" />
+                        <TextCell Text="Previous Address"
+                                  Detail="{Binding PrevAddress2}" />
+                        <TextCell Text="City, State, ZIP"
+                                  Detail="{Binding PrevCSZ2}" />
+                        <TextCell Text="Move-In Date"
+                                  Detail="{Binding PrevMoveDate2, StringFormat='{0:MMMM dd, yyyy}'}" />
+                        <TextCell Text="Move-Out Date"
+                                  Detail="{Binding PrevMoveOutDate2, StringFormat='{0:MMMM dd, yyyy}'}" />
+                        <TextCell Text="Landlord's Name"
+                                  Detail="{Binding PrevLandlordName2}" />
+                        <TextCell Text="Landlord's Phone #"
+                                  Detail="{Binding PrevLandlordPhone2}" />
+                        <TextCell Text="Monthly Rent"
+                                  Detail="{Binding PrevRent2}" />
+                        <TextCell Text="" />
+
                     </TableSection>
                 </TableRoot>
             </TableView>

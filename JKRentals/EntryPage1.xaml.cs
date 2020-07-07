@@ -23,6 +23,7 @@ namespace JKRentals
         public EntryPage1(bool newApp, string filename)
         {
             InitializeComponent();
+            app.CurrentPage = 1;
             if (newApp)
             {
                 string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -88,7 +89,30 @@ namespace JKRentals
                                         app.PhoneNo + '\n' +
                                         app.AltPhoneNo + '\n' +
                                         app.Email + '\n' +
-                                        app.NoInhabitants + '\n');
+                                        app.NoInhabitants + '\n' +
+                                        app.DesiredAddress + '\n' +
+                                        app.MoveDate + '\n' +
+                                        app.CurrentAddress + '\n' +
+                                        app.CurrentCSZ + '\n' +
+                                        app.CurrMoveDate + '\n' +
+                                        app.CurrLandlordName + '\n' +
+                                        app.CurrLandlordPhone + '\n' +
+                                        app.CurrRent + '\n' +
+                                        app.CurrMoveReason + '\n' +
+                                        app.PrevAddress1 + '\n' +
+                                        app.PrevCSZ1 + '\n' +
+                                        app.PrevMoveDate1 + '\n' +
+                                        app.PrevMoveOutDate1 + '\n' +
+                                        app.PrevLandlordName1 + '\n' +
+                                        app.PrevLandlordPhone1 + '\n' +
+                                        app.PrevRent1 + '\n' +
+                                        app.PrevAddress2 + '\n' +
+                                        app.PrevCSZ2 + '\n' +
+                                        app.PrevMoveDate2 + '\n' +
+                                        app.PrevMoveOutDate2 + '\n' +
+                                        app.PrevLandlordName2 + '\n' +
+                                        app.PrevLandlordPhone2 + '\n' +
+                                        app.PrevRent2 + '\n') ;
             }
         }
 
@@ -97,7 +121,6 @@ namespace JKRentals
                 // save data and move on
                 SaveData();
                 WriteToTempFile();
-                Debug.WriteLine(app.AppFilename);
 
                 bool allgood = app.CheckForCompletion();
 
