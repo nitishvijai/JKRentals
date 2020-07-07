@@ -34,8 +34,13 @@ namespace JKRentals.Models
 
         public string AppFilename { get; set; }
 
+        public string DesiredAddress { get; set; }
+
+        public DateTime MoveDate { get; set; }
+
         // Application checks
         private Boolean Pg1Complete { get; set; }
+        private Boolean Pg2Complete { get; set; }
         private Boolean AppComplete { get; set; }
 
         public Boolean CheckForCompletion()

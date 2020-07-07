@@ -94,10 +94,6 @@ namespace JKRentals
 
         private async void SubmitBtn_Clicked(object sender, EventArgs e)
         {
-            string confirm = await DisplayActionSheet("Are you ready to submit?", "Yes", "No");
-
-            if (confirm == "Yes")
-            {
                 // save data and move on
                 SaveData();
                 WriteToTempFile();
@@ -133,9 +129,8 @@ namespace JKRentals
                     return;
                 }
 
-                await Navigation.PushAsync(new ReviewPage(app));
-            }
-            else {  /* discard action and do nothing */  }
+                await Navigation.PushAsync(new EntryPage2());
+            
         }
     }
 }

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="JKRentals.EntryPage2" NavigationPage.HasBackButton="True" NavigationPage.HasNavigationBar="True" Title="Rental Information (2 of 6)" NavigationPage.BackButtonTitle="Page 1">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="2.0*" />
+                <ColumnDefinition Width="4.5*" />
+                <ColumnDefinition Width="0.1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <Label Text="Address Applying For: " Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" />
+            <Entry Placeholder="Enter Street Address" Grid.Row="0" Grid.Column="2" />
+
+            <Label Text="Desired Move-In Date: " Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center" />
+            <DatePicker Grid.Row="1" Grid.Column="2" MinimumDate="2020-07-31"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
