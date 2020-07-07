@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using JKRentals.Models;
+using Android.Views;
 
 namespace JKRentals
 {
@@ -25,14 +26,11 @@ namespace JKRentals
             PopulateTextBoxes(thisApp);
         }
 
-
-        protected override bool OnBackButtonPressed()
+        protected override void OnDisappearing()
         {
             SaveData();
-            Navigation.PopAsync();
-            return true;
+            base.OnDisappearing();
         }
-
 
         public void PopulateTextBoxes(ApplicationEntry _app)
         {

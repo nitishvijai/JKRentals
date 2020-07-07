@@ -13,6 +13,7 @@ namespace JKRentals.Models
         public ApplicationEntry()
         {
             Pg1Complete = false;
+            Pg2Complete = false;
             AppComplete = false;
         }
 

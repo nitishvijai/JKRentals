@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.Linq;
 
 namespace JKRentals.Droid
 {
@@ -29,5 +30,6 @@ namespace JKRentals.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
     }
 }
