@@ -31,7 +31,6 @@ namespace JKRentals
         protected override void OnDisappearing()
         {
             SaveData();
-            --ep1.app.CurrentPage;
             base.OnDisappearing();
         }
 
@@ -99,47 +98,41 @@ namespace JKRentals
 
         private async void SubmitBtn_Clicked(object sender, EventArgs e)
         {
-            string confirm = await DisplayActionSheet("Are you ready to submit your application?", "Yes", "No");
+            // save data and move on
+            SaveData();
 
-            if (confirm == "Yes")
+            bool allgood = ep1.app.CheckForCompletion();
+
+            if (!allgood)
             {
-                // save data and move on
-                SaveData();
-
-                bool allgood = ep1.app.CheckForCompletion();
-
-                if (!allgood)
-                {
-                    await DisplayAlert("Incomplete Form", "You have not entered values for some fields. Please go back and review your answers.", "OK");
-                    return;
-                }
-
-                bool phone1, phone2, phone3;
-
-                phone1 = phone2 = phone3 = true;
-
-                if (!string.IsNullOrWhiteSpace(LandlordPhone.Text))
-                {
-                    phone1 = ep1.app.IsPhoneNumber(ep1.app.CurrLandlordPhone);
-                }
-                if (!string.IsNullOrWhiteSpace(LandlordPhone1.Text))
-                {
-                    phone2 = ep1.app.IsPhoneNumber(ep1.app.PrevLandlordPhone1);
-                }
-                if (!string.IsNullOrWhiteSpace(LandlordPhone2.Text))
-                {
-                    phone3 = ep1.app.IsPhoneNumber(ep1.app.PrevLandlordPhone2);
-                }
-
-                if (!phone1 || !phone2 || !phone3)
-                {
-                    await DisplayAlert("Invalid Format", "One or more of your phone numbers are in an invalid format.", "OK");
-                    return;
-                }
-
-                await Navigation.PushAsync(new ReviewPage(ep1.app));
+                await DisplayAlert("Incomplete Form", "You have not entered values for some fields. Please go back and review your answers.", "OK");
+                return;
             }
-            else { /* discard action and do nothing */ }
+
+            bool phone1, phone2, phone3;
+
+            phone1 = phone2 = phone3 = true;
+
+            if (!string.IsNullOrWhiteSpace(LandlordPhone.Text))
+            {
+                phone1 = ep1.app.IsPhoneNumber(ep1.app.CurrLandlordPhone);
+            }
+            if (!string.IsNullOrWhiteSpace(LandlordPhone1.Text))
+            {
+                phone2 = ep1.app.IsPhoneNumber(ep1.app.PrevLandlordPhone1);
+            }
+            if (!string.IsNullOrWhiteSpace(LandlordPhone2.Text))
+            {
+                phone3 = ep1.app.IsPhoneNumber(ep1.app.PrevLandlordPhone2);
+            }
+
+            if (!phone1 || !phone2 || !phone3)
+            {
+                await DisplayAlert("Invalid Format", "One or more of your phone numbers are in an invalid format.", "OK");
+                return;
+            }
+
+            await Navigation.PushAsync(new EntryPage3(ep1));
         }
     }
 }

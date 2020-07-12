@@ -12,12 +12,12 @@ namespace JKRentals.Models
     {
         public ApplicationEntry()
         {
-            Pg1Complete = false;
-            Pg2Complete = false;
             AppComplete = false;
         }
 
         public int CurrentPage { get; set; }
+
+        // -------------------------------- PAGE 1 -------------------------------- 
 
         public string FirstName { get; set; }
         public string MiddleInitial { get; set; }
@@ -36,6 +36,8 @@ namespace JKRentals.Models
         public int NoInhabitants { get; set; }
 
         public string AppFilename { get; set; }
+
+        // -------------------------------- PAGE 2 -------------------------------- 
 
         public string DesiredAddress { get; set; }
 
@@ -67,55 +69,46 @@ namespace JKRentals.Models
         public string PrevLandlordPhone2 { get; set; }
         public int PrevRent2 { get; set; }
 
+        // -------------------------------- PAGE 3 -------------------------------- 
+
+        public string CurrentEmployer { get; set; }
+        public string EmpPhoneNo { get; set; }
+        public int GrossWages { get; set; }
+        public string ManagerName { get; set; }
+        public DateTime HireDate { get; set; }
+        public string IncomeSrcs { get; set; }
+        public string Explanation { get; set; }
 
 
 
-
-        // Application checks
-        private Boolean Pg1Complete { get; set; }
-        private Boolean Pg2Complete { get; set; }
+        // Application check
         private Boolean AppComplete { get; set; }
 
         public Boolean CheckForCompletion()
         {
-            string[] requiredFields;
+            string[] requiredFields = null;
+            AppComplete = true;
 
             if (CurrentPage == 1)
             {
                 requiredFields = new string[]{ FirstName, LastName, SocSecNo, DriverLicenseNo, PhoneNo, Email };
-
-                foreach (string item in requiredFields)
-                {
-                    if (string.IsNullOrEmpty(item) || string.IsNullOrWhiteSpace(item))
-                    {
-                        Pg1Complete = false;
-                        AppComplete = false;
-                        return false;
-                    }
-                }
-
-                Pg1Complete = true;
-
-                return true;
             }
             else if (CurrentPage == 2)
             {
                 requiredFields = new string[] { DesiredAddress, CurrentAddress, CurrentCSZ, CurrMoveReason };
+            }
+            else if (CurrentPage == 3)
+            {
+                requiredFields = new string[] { CurrentEmployer, EmpPhoneNo, GrossWages.ToString(), ManagerName, HireDate.ToString() };
+            }
 
-                foreach (string item in requiredFields)
+            foreach (string item in requiredFields)
+            {
+                if (string.IsNullOrWhiteSpace(item))
                 {
-                    if (string.IsNullOrEmpty(item) || string.IsNullOrWhiteSpace(item))
-                    {
-                        Pg2Complete = false;
-                        AppComplete = false;
-                        return false;
-                    }
+                    AppComplete = false;
+                    return false;
                 }
-
-                Pg2Complete = true;
-                AppComplete = true;
-
-                return true;
             }
 
             return AppComplete;

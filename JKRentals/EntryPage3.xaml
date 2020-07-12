@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="JKRentals.EntryPage3"
+             Title="Employment Information (3 of 6)"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.BackButtonTitle="Page 2">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="1.1*" />
+                <ColumnDefinition Width="3.5*" />
+
+                <ColumnDefinition Width="0.1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <Label Text="Please include all sources of income. If you have more, you will be able to list them in the Additional section."
+                   Grid.Row="0"
+                   Grid.RowSpan="1"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="3"
+                   Margin="5" />
+
+            <Label Text="Current Employer:"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="Employer"
+                   Placeholder="Required"
+                   Grid.Row="1"
+                   Grid.Column="2" />
+
+            <Label Text="Employer Phone Number:"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="EmpPhoneNo"
+                   Placeholder="Required"
+                   Grid.Row="2"
+                   Grid.Column="2"
+                   Keyboard="Telephone" />
+
+            <Label Text="Gross Wages Per Month:"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="GrossWage"
+                   Placeholder="Required"
+                   Grid.Row="3"
+                   Grid.Column="2"
+                   Keyboard="Numeric" />
+
+            <Label Text="Supervisor Name:"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="ManagerName"
+                   Placeholder="Required"
+                   Grid.Row="4"
+                   Grid.Column="2" />
+
+            <Label Text="Hire Date:"
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   VerticalTextAlignment="Center" />
+            <DatePicker MinimumDate="1950-01-01"
+                        Date="2020-07-31"
+                        x:Name="HireDate"
+                        Grid.Row="5"
+                        Grid.Column="2" />
+
+            <Label Text="Other Income Sources:"
+                   Grid.Row="6"
+                   Grid.Column="1"
+                   VerticalTextAlignment="Center" />
+            <Editor x:Name="IncomeSrc"
+                    Grid.Row="6"
+                    Grid.Column="2"
+                    Grid.RowSpan="2" Placeholder="Optional if none" />
+
+            <Label Text="Explain:"
+                   Grid.Row="9"
+                   Grid.Column="1"
+                   VerticalTextAlignment="Center" />
+            <Editor x:Name="Explanation"
+                    Grid.Row="9"
+                    Grid.Column="2"
+                    Grid.RowSpan="2" Placeholder="Optional if none" />
+
+            <Button x:Name="ReturnBtn"
+                    Text="Save for Later"
+                    Grid.Row="13"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Clicked="ReturnBtn_Clicked" />
+            <Button x:Name="SubmitBtn"
+                    Text="Continue (Submit Debug)"
+                    Grid.Row="14"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Clicked="SubmitBtn_Clicked" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
