@@ -109,6 +109,23 @@
                         <TextCell Text="" />
 
                     </TableSection>
+                    <TableSection Title="EMPLOYMENT INFORMATION">
+                        <TextCell Text="Current Employer"
+                                  Detail="{Binding CurrentEmployer}" />
+                        <TextCell Text="Employer Phone Number"
+                                  Detail="{Binding EmpPhoneNo}" />
+                        <TextCell Text="Gross Wages Per Month"
+                                  Detail="{Binding GrossWages}" />
+                        <TextCell Text="Manager/Supervisor Name"
+                                  Detail="{Binding ManagerName}" />
+                        <TextCell Text="Hire Date"
+                                  Detail="{Binding HireDate, StringFormat='{0:MMMM dd, yyyy}'}" />
+                        <TextCell Text="Other Sources of Income"
+                                  Detail="{Binding OtherSrcs}" />
+                        <TextCell Text="Explanation"
+                                  Detail="{Binding Explanation}" />
+                        <TextCell Text="" />
+                    </TableSection>
                 </TableRoot>
             </TableView>
         </ScrollView>
