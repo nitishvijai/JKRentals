@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="JKRentals.EntryPage4"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="True"
+             Title="Questionnaire (4 of 6)">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*" />
+                    <ColumnDefinition Width="1.3*" />
+                    <ColumnDefinition Width="3.5*" />
+
+                    <ColumnDefinition Width="0.1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Label Text="Please answer all these questions truthfully."
+                       Grid.Row="0"
+                       Grid.RowSpan="1"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="3"
+                       Margin="0,10,0,0" />
+
+                <Label Text="How long will you live here?:"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Entry x:Name="HouseLife"
+                       Placeholder="Required"
+                       Grid.Row="1"
+                       Grid.Column="2" />
+
+                <Label Text="What pets do you have?:"
+                       Grid.Row="2"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Entry x:Name="Pets"
+                       Placeholder="Required"
+                       Grid.Row="2"
+                       Grid.Column="2" />
+
+                <Label Text="# of evictions filed on you:"
+                       Grid.Row="3"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Label x:Name="NumEvictions"
+                       Text="0"
+                       Grid.Row="3"
+                       Grid.Column="2"
+                       VerticalTextAlignment="Center"
+                       Margin="10,0,0,0"
+                       FontSize="Title" />
+                <Stepper x:Name="Evictions"
+                         Minimum="0"
+                         Maximum="10"
+                         Increment="1"
+                         Grid.Row="3"
+                         Grid.Column="2"
+                         Value="0"
+                         Margin="50,0,0,0"
+                         HorizontalOptions="End" />
+
+                <Label Text="# of felonies:"
+                       Grid.Row="4"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Label x:Name="NumFelonies"
+                       Text="0"
+                       Grid.Row="4"
+                       Grid.Column="2"
+                       VerticalTextAlignment="Center"
+                       Margin="10,0,0,0"
+                       FontSize="Title" />
+                <Stepper x:Name="Felonies"
+                         Minimum="0"
+                         Maximum="10"
+                         Increment="1"
+                         Grid.Row="4"
+                         Grid.Column="2"
+                         Value="0"
+                         Margin="50,0,0,0"
+                         HorizontalOptions="End" />
+
+                <Label Text="Have you broken a lease?:"
+                       Grid.Row="5"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Label Text="No"
+                       Grid.Row="5"
+                       Grid.Column="2"
+                       VerticalTextAlignment="Center"
+                       Margin="10,0,0,0"
+                       FontSize="Title" />
+                <Switch x:Name="BrokeLease"
+                        IsToggled="false"
+                        Grid.Row="5"
+                        Grid.Column="2" />
+
+                <Label Text="Do you smoke?:"
+                       Grid.Row="6"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Label Text="No"
+                       Grid.Row="6"
+                       Grid.Column="2"
+                       VerticalTextAlignment="Center"
+                       Margin="10,0,0,0"
+                       FontSize="Title" />
+                <Switch x:Name="Smoke" 
+                        IsToggled="false"
+                        Grid.Row="6"
+                        Grid.Column="2" />
+
+                <Label Text="Do you have a checking account?:"
+                       Grid.Row="7"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Label Text="No"
+                       Grid.Row="7"
+                       Grid.Column="2"
+                       VerticalTextAlignment="Center"
+                       Margin="10,0,0,0"
+                       FontSize="Title" />
+                <Switch x:Name="CheckAcct" 
+                    IsToggled="false"
+                        Grid.Row="7"
+                        Grid.Column="2" />
+
+                <Label Text="# of vehicles:"
+                       Grid.Row="8"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Label x:Name="NumVehicles"
+                       Text="0"
+                       Grid.Row="8"
+                       Grid.Column="2"
+                       VerticalTextAlignment="Center"
+                       Margin="10,0,0,0"
+                       FontSize="Title" />
+                <Stepper x:Name="Vehicles"
+                         Minimum="0"
+                         Maximum="10"
+                         Increment="1"
+                         Grid.Row="8"
+                         Grid.Column="2"
+                         Value="0"
+                         Margin="50,0,0,0"
+                         HorizontalOptions="End" />
+
+                <Label Text="Is the total move-in amount available now?:"
+                       Grid.Row="9"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Label Text="No"
+                       Grid.Row="9"
+                       Grid.Column="2"
+                       VerticalTextAlignment="Center"
+                       Margin="10,0,0,0"
+                       FontSize="Title" />
+                <Switch x:Name="AmtReady"
+                        IsToggled="false"
+                        Grid.Row="9"
+                        Grid.Column="2" />
+
+                <Label Text="What would limit your ability to pay rent?:"
+                       Grid.Row="10"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Editor x:Name="LimitRent"
+                        Grid.Row="10"
+                        Grid.Column="2"
+                        Grid.RowSpan="2"
+                        Placeholder="Required" />
+
+                <Label Text="How much money do you have?:"
+                       Grid.Row="13"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Editor x:Name="MoneyValue"
+                        Grid.Row="13"
+                        Grid.Column="2"
+                        Placeholder="Required" />
+
+                <Label Text=""
+                       Grid.Row="14"
+                       Grid.Column="1" />
+
+                <Label Text="Emergency Contact Name:"
+                       Grid.Row="15"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Editor x:Name="EmergencyName"
+                        Grid.Row="15"
+                        Grid.Column="2"
+                        Placeholder="Required" />
+
+                <Label Text="Emergency Contact Phone:"
+                       Grid.Row="16"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Editor x:Name="EmergencyPhone"
+                        Grid.Row="16"
+                        Grid.Column="2"
+                        Placeholder="Required"
+                        Keyboard="Telephone" />
+
+                <Label Text=""
+                       Grid.Row="17"
+                       Grid.Column="1" />
+
+                <Label Text="Where did you hear about this?:"
+                       Grid.Row="18"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Editor x:Name="HearSource"
+                        Grid.Row="18"
+                        Grid.Column="2"
+                        Grid.RowSpan="2"
+                        Placeholder="Required" />
+
+                <Label Text="Why should we rent to you?:"
+                       Grid.Row="20"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Center" />
+                <Editor x:Name="WhyRent"
+                        Grid.Row="20"
+                        Grid.Column="2"
+                        Grid.RowSpan="2"
+                        Placeholder="Required" />
+
+
+                <Button x:Name="ReturnBtn"
+                        Text="Save for Later"
+                        Grid.Row="22"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2" />
+                <Button x:Name="SubmitBtn"
+                        Text="Continue (Submit Debug)"
+                        Grid.Row="23"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2" />
+            </Grid>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

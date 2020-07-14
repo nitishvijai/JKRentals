@@ -121,7 +121,7 @@
                     Grid.ColumnSpan="2"
                     Clicked="ReturnBtn_Clicked" />
             <Button x:Name="SubmitBtn"
-                    Text="Continue (Submit Debug)"
+                    Text="Next Page"
                     Grid.Row="14"
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
