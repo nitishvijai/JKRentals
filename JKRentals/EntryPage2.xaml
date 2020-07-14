@@ -104,7 +104,8 @@
                        VerticalTextAlignment="Center" />
                 <DatePicker x:Name="MoveDate"
                             Grid.Row="8"
-                            Grid.Column="2" />
+                            Grid.Column="2"
+                            Date="1-1-1990"/>
 
                 <Label Text="Landlord's Name: "
                        Grid.Row="9"
@@ -174,7 +175,8 @@
                        VerticalTextAlignment="Center" />
                 <DatePicker x:Name="MoveDate1"
                             Grid.Row="16"
-                            Grid.Column="2" />
+                            Grid.Column="2"
+                            Date="1-1-1990"/>
 
                 <Label Text="Move-Out Date: "
                        Grid.Row="17"
@@ -182,7 +184,8 @@
                        VerticalTextAlignment="Center" />
                 <DatePicker x:Name="MoveOutDate1"
                             Grid.Row="17"
-                            Grid.Column="2" />
+                            Grid.Column="2"
+                            Date="1-1-1990"/>
 
                 <Label Text="Landlord's Name: "
                        Grid.Row="18"
@@ -243,7 +246,8 @@
                        VerticalTextAlignment="Center" />
                 <DatePicker x:Name="MoveDate2"
                             Grid.Row="24"
-                            Grid.Column="2" />
+                            Grid.Column="2"
+                            Date="1-1-1990"/>
 
                 <Label Text="Move-Out Date: "
                        Grid.Row="25"
@@ -251,7 +255,8 @@
                        VerticalTextAlignment="Center" />
                 <DatePicker x:Name="MoveOutDate2"
                             Grid.Row="25"
-                            Grid.Column="2" />
+                            Grid.Column="2" 
+                            Date="1-1-1990"/>
 
                 <Label Text="Landlord's Name: "
                        Grid.Row="26"
@@ -288,7 +293,7 @@
                         Grid.Column="1"
                         Grid.ColumnSpan="2" />
                 <Button x:Name="SubmitBtn"
-                        Text="Continue (Submit Debug)"
+                        Text="Next Page"
                         Grid.Row="30"
                         Grid.Column="1"
                         Grid.ColumnSpan="2"

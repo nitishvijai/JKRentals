@@ -112,7 +112,14 @@ namespace JKRentals
                                         app.PrevMoveOutDate2 + '\n' +
                                         app.PrevLandlordName2 + '\n' +
                                         app.PrevLandlordPhone2 + '\n' +
-                                        app.PrevRent2 + '\n') ;
+                                        app.PrevRent2 + '\n' + 
+                                        app.CurrentEmployer + '\n' +
+                                        app.EmpPhoneNo + '\n' +
+                                        app.GrossWages + '\n' +
+                                        app.ManagerName + '\n' +
+                                        app.HireDate + '\n' +
+                                        app.IncomeSrcs + '\n' +
+                                        app.Explanation) ;
             }
         }
 

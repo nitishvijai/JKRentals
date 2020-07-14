@@ -100,12 +100,19 @@ namespace JKRentals
         {
             // save data and move on
             SaveData();
+            ep1.WriteToTempFile();
 
             bool allgood = ep1.app.CheckForCompletion();
 
             if (!allgood)
             {
                 await DisplayAlert("Incomplete Form", "You have not entered values for some fields. Please go back and review your answers.", "OK");
+                return;
+            }
+
+            if ((MoveDate1.Date > MoveOutDate1.Date) || (MoveDate2.Date > MoveOutDate2.Date))
+            {
+                await DisplayAlert("Incorrect Date", "Your move-out date cannot occur before your move-in date. Please go back and correct the date.", "OK");
                 return;
             }
 

@@ -61,6 +61,7 @@ namespace JKRentals
             if (confirm == "Yes")
             {
                 SaveData();
+                ep1.WriteToTempFile();
 
                 bool allgood = ep1.app.CheckForCompletion();
 
