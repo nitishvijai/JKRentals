@@ -91,7 +91,8 @@
                          Grid.Column="2"
                          Value="0"
                          Margin="50,0,0,0"
-                         HorizontalOptions="End" />
+                         HorizontalOptions="End"
+                         ValueChanged="Evictions_ValueChanged"/>
 
                 <Label Text="# of felonies:"
                        Grid.Row="4"
@@ -112,13 +113,15 @@
                          Grid.Column="2"
                          Value="0"
                          Margin="50,0,0,0"
-                         HorizontalOptions="End" />
+                         HorizontalOptions="End" 
+                         ValueChanged="Felonies_ValueChanged"/>
 
                 <Label Text="Have you broken a lease?:"
                        Grid.Row="5"
                        Grid.Column="1"
                        VerticalTextAlignment="Center" />
-                <Label Text="No"
+                <Label x:Name="YN_BrokeLease"
+                       Text="No"
                        Grid.Row="5"
                        Grid.Column="2"
                        VerticalTextAlignment="Center"
@@ -127,13 +130,15 @@
                 <Switch x:Name="BrokeLease"
                         IsToggled="false"
                         Grid.Row="5"
-                        Grid.Column="2" />
+                        Grid.Column="2" 
+                        Toggled="BrokeLease_Toggled"/>
 
                 <Label Text="Do you smoke?:"
                        Grid.Row="6"
                        Grid.Column="1"
                        VerticalTextAlignment="Center" />
-                <Label Text="No"
+                <Label x:Name="YN_Smoke"
+                       Text="No"
                        Grid.Row="6"
                        Grid.Column="2"
                        VerticalTextAlignment="Center"
@@ -142,13 +147,15 @@
                 <Switch x:Name="Smoke" 
                         IsToggled="false"
                         Grid.Row="6"
-                        Grid.Column="2" />
+                        Grid.Column="2"
+                        Toggled="Smoke_Toggled"/>
 
                 <Label Text="Do you have a checking account?:"
                        Grid.Row="7"
                        Grid.Column="1"
                        VerticalTextAlignment="Center" />
-                <Label Text="No"
+                <Label x:Name="YN_CheckAcct"
+                       Text="No"
                        Grid.Row="7"
                        Grid.Column="2"
                        VerticalTextAlignment="Center"
@@ -157,7 +164,8 @@
                 <Switch x:Name="CheckAcct" 
                     IsToggled="false"
                         Grid.Row="7"
-                        Grid.Column="2" />
+                        Grid.Column="2" 
+                        Toggled="CheckAcct_Toggled"/>
 
                 <Label Text="# of vehicles:"
                        Grid.Row="8"
@@ -178,13 +186,15 @@
                          Grid.Column="2"
                          Value="0"
                          Margin="50,0,0,0"
-                         HorizontalOptions="End" />
+                         HorizontalOptions="End"
+                         ValueChanged="Vehicles_ValueChanged"/>
 
                 <Label Text="Is the total move-in amount available now?:"
                        Grid.Row="9"
                        Grid.Column="1"
                        VerticalTextAlignment="Center" />
-                <Label Text="No"
+                <Label x:Name="YN_AmtReady"
+                       Text="No"
                        Grid.Row="9"
                        Grid.Column="2"
                        VerticalTextAlignment="Center"
@@ -193,7 +203,8 @@
                 <Switch x:Name="AmtReady"
                         IsToggled="false"
                         Grid.Row="9"
-                        Grid.Column="2" />
+                        Grid.Column="2"
+                        Toggled="AmtReady_Toggled"/>
 
                 <Label Text="What would limit your ability to pay rent?:"
                        Grid.Row="10"

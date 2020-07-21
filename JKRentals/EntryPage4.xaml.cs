@@ -29,5 +29,68 @@ namespace JKRentals
         {
             base.OnDisappearing();
         }
+
+        private void Evictions_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            NumEvictions.Text = Evictions.Value.ToString();
+        }
+
+        private void Felonies_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            NumFelonies.Text = Felonies.Value.ToString();
+        }
+
+        private void Vehicles_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            NumVehicles.Text = Vehicles.Value.ToString();
+        }
+
+        private void BrokeLease_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (BrokeLease.IsToggled)
+            {
+                YN_BrokeLease.Text = "Yes";
+            }
+            else
+            {
+                YN_BrokeLease.Text = "No";
+            }
+        }
+
+        private void Smoke_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (Smoke.IsToggled)
+            {
+                YN_Smoke.Text = "Yes";
+            }
+            else
+            {
+                YN_Smoke.Text = "No";
+            }
+        }
+
+        private void CheckAcct_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (CheckAcct.IsToggled)
+            {
+                YN_CheckAcct.Text = "Yes";
+            }
+            else
+            {
+                YN_CheckAcct.Text = "No";
+            }
+        }
+
+        private void AmtReady_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (AmtReady.IsToggled)
+            {
+                YN_AmtReady.Text = "Yes";
+            }
+            else
+            {
+                YN_AmtReady.Text = "No";
+            }
+        }
     }
 }
