@@ -23,10 +23,38 @@ namespace JKRentals
             thisApp = ep1.app;
             ep1.app.CurrentPage = 4;
             thisApp.CurrentPage = 4;
+            PopulateFields(thisApp);
+        }
+
+        public void PopulateFields(ApplicationEntry _app)
+        {
+            HouseLife.Text = ep1.app.StayDuration;
+            Pets.Text = ep1.app.Pets;
+            Evictions.Value = ep1.app.NumEvictions;
+            Felonies.Value = ep1.app.NumFelonies;
+            BrokeLease.IsToggled = ep1.app.BrokeLease;
+            Smoke.IsToggled = ep1.app.Smoke;
+            CheckAcct.IsToggled = ep1.app.CheckAcct;
+            Vehicles.Value = ep1.app.NumVehicles;
+            AmtReady.IsToggled = ep1.app.AmtReady;
+            LimitRent.Text = ep1.app.LimitRent;
+            MoneyValue.Text = ep1.app.MoneyValue;
+            EmergencyName.Text = ep1.app.EmergencyName;
+            EmergencyPhone.Text = ep1.app.EmergencyPhone;
+            HearSource.Text = ep1.app.HearSource;
+            WhyRent.Text = ep1.app.WhyRent;
+        }
+
+        protected override void OnAppearing()
+        {
+            ep1.app.CurrentPage = 4;
+            thisApp.CurrentPage = 4;
+            base.OnAppearing();
         }
 
         protected override void OnDisappearing()
         {
+            SaveData();
             base.OnDisappearing();
         }
 
@@ -91,6 +119,54 @@ namespace JKRentals
             {
                 YN_AmtReady.Text = "No";
             }
+        }
+
+        public void SaveData()
+        {
+            ep1.app.StayDuration = HouseLife.Text;
+            ep1.app.Pets = Pets.Text;
+            ep1.app.NumEvictions = (int)Evictions.Value;
+            ep1.app.NumFelonies = (int)Felonies.Value;
+            ep1.app.BrokeLease = BrokeLease.IsToggled;
+            ep1.app.Smoke = Smoke.IsToggled;
+            ep1.app.CheckAcct = CheckAcct.IsToggled;
+            ep1.app.NumVehicles = (int)Vehicles.Value;
+            ep1.app.AmtReady = AmtReady.IsToggled;
+            ep1.app.LimitRent = LimitRent.Text;
+            ep1.app.MoneyValue = MoneyValue.Text;
+            ep1.app.EmergencyName = EmergencyName.Text;
+            ep1.app.EmergencyPhone = EmergencyPhone.Text;
+            ep1.app.HearSource = HearSource.Text;
+            ep1.app.WhyRent = WhyRent.Text;
+        }
+
+        private async void SubmitBtn_Clicked(object sender, EventArgs e)
+        {
+            string confirm = await DisplayActionSheet("Are you ready to submit your application?", "Yes", "No");
+
+            if (confirm == "Yes")
+            {
+                SaveData();
+
+                bool allgood = ep1.app.CheckForCompletion();
+
+                if (!allgood)
+                {
+                    await DisplayAlert("Incomplete Form", "You have not entered values for some fields. Please go back and review your answers.", "OK");
+                    return;
+                }
+
+                bool phonegood = ep1.app.IsPhoneNumber(EmergencyPhone.Text);
+
+                if (!phonegood)
+                {
+                    await DisplayAlert("Invalid Format", "A phone number is in an invalid format.", "OK");
+                    return;
+                }
+
+                await Navigation.PushAsync(new ReviewPage(ep1.app));
+            }
+            else { /* discard action and do nothing */ }
         }
     }
 }

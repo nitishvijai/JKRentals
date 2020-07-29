@@ -26,6 +26,13 @@ namespace JKRentals
             PopulateTextBoxes(thisApp);
         }
 
+        protected override void OnAppearing()
+        {
+            ep1.app.CurrentPage = 3;
+            thisApp.CurrentPage = 3;
+            base.OnAppearing();
+        }
+
         protected override void OnDisappearing()
         {
             SaveData();

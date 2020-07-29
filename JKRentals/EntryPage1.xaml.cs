@@ -36,6 +36,12 @@ namespace JKRentals
             }
         }
 
+        protected override void OnAppearing()
+        {
+            app.CurrentPage = 1;
+            base.OnAppearing();
+        }
+
 
         private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
@@ -112,14 +118,29 @@ namespace JKRentals
                                         app.PrevMoveOutDate2 + '\n' +
                                         app.PrevLandlordName2 + '\n' +
                                         app.PrevLandlordPhone2 + '\n' +
-                                        app.PrevRent2 + '\n' + 
+                                        app.PrevRent2 + '\n' +
                                         app.CurrentEmployer + '\n' +
                                         app.EmpPhoneNo + '\n' +
                                         app.GrossWages + '\n' +
                                         app.ManagerName + '\n' +
                                         app.HireDate + '\n' +
                                         app.IncomeSrcs + '\n' +
-                                        app.Explanation) ;
+                                        app.Explanation + '\n' +
+                                        app.StayDuration + '\n' +
+                                        app.Pets + '\n' +
+                                        app.NumEvictions + '\n' +
+                                        app.NumFelonies + '\n' +
+                                        app.BrokeLease + '\n' +
+                                        app.Smoke + '\n' +
+                                        app.CheckAcct + '\n' +
+                                        app.NumVehicles + '\n' +
+                                        app.AmtReady + '\n' +
+                                        app.LimitRent + '\n' +
+                                        app.MoneyValue + '\n' +
+                                        app.EmergencyName + '\n' +
+                                        app.EmergencyPhone + '\n' +
+                                        app.HearSource + '\n' +
+                                        app.WhyRent);
             }
         }
 

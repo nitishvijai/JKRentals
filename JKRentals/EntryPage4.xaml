@@ -282,7 +282,8 @@
                         Text="Continue (Submit Debug)"
                         Grid.Row="23"
                         Grid.Column="1"
-                        Grid.ColumnSpan="2" />
+                        Grid.ColumnSpan="2" 
+                        Clicked="SubmitBtn_Clicked"/>
             </Grid>
         </ScrollView>
 

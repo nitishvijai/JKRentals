@@ -79,6 +79,23 @@ namespace JKRentals.Models
         public string IncomeSrcs { get; set; }
         public string Explanation { get; set; }
 
+        // -------------------------------- PAGE 4 -------------------------------- 
+
+        public string StayDuration { get; set; }
+        public string Pets { get; set; }
+        public int NumEvictions { get; set; }
+        public int NumFelonies { get; set; }
+        public bool BrokeLease { get; set; }
+        public bool Smoke { get; set; }
+        public bool CheckAcct { get; set; }
+        public int NumVehicles { get; set; }
+        public bool AmtReady { get; set; }
+        public string LimitRent { get; set; }
+        public string MoneyValue { get; set; }
+        public string EmergencyName { get; set; }
+        public string EmergencyPhone { get; set; }
+        public string HearSource { get; set; }
+        public string WhyRent { get; set; }
 
 
         // Application check
@@ -100,6 +117,10 @@ namespace JKRentals.Models
             else if (CurrentPage == 3)
             {
                 requiredFields = new string[] { CurrentEmployer, EmpPhoneNo, GrossWages.ToString(), ManagerName, HireDate.ToString() };
+            }
+            else if (CurrentPage == 4)
+            {
+                requiredFields = new string[] { StayDuration, Pets, EmergencyName, EmergencyPhone, LimitRent, MoneyValue, HearSource, WhyRent };
             }
 
             foreach (string item in requiredFields)
