@@ -31,5 +31,6 @@ namespace JKRentals.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
+
     }
 }

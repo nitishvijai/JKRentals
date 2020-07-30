@@ -36,6 +36,16 @@ namespace JKRentals
             }
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            Device.BeginInvokeOnMainThread(async () => {
+                var result = await DisplayAlert("Are you sure you want to discard this application?", "Any unsaved data will be lost.", "Yes", "No");
+                if (result) await this.Navigation.PopAsync(); // or anything else
+            });
+
+            return true;
+        }
+
         protected override void OnAppearing()
         {
             app.CurrentPage = 1;
@@ -182,6 +192,14 @@ namespace JKRentals
 
                 await Navigation.PushAsync(new EntryPage2(this));
             
+        }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Device.BeginInvokeOnMainThread(async () => {
+                var result = await DisplayAlert("Are you sure you want to discard this application?", "Any unsaved data will be lost.", "Yes", "No");
+                if (result) await this.Navigation.PopAsync(); // or anything else
+            });
         }
     }
 }

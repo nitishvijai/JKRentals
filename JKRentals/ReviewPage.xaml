@@ -126,6 +126,40 @@
                                   Detail="{Binding Explanation}" />
                         <TextCell Text="" />
                     </TableSection>
+                    <TableSection Title="QUESTIONNAIRE">
+                        <TextCell Text="How long will you live here?"
+                                  Detail="{Binding StayDuration}" />
+                        <TextCell Text="What pets do you have?"
+                                  Detail="{Binding Pets}" />
+                        <TextCell Text="# of Evictions"
+                                  Detail="{Binding NumEvictions}" />
+                        <TextCell Text="# of Felonies"
+                                  Detail="{Binding NumFelonies}" />
+                        <TextCell Text="Have you ever broken a lease?"
+                                  Detail="{Binding BrokeLease}" />
+                        <TextCell Text="Do you smoke?"
+                                  Detail="{Binding Smoke}" />
+                        <TextCell Text="Do you have a checking account?"
+                                  Detail="{Binding CheckAcct}" />
+                        <TextCell Text="# of Vehicles"
+                                  Detail="{Binding NumVehicles}" />
+                        <TextCell Text="Is the total move-in amount ready?"
+                                  Detail="{Binding AmtReady}" />
+                        <TextCell Text="What would limit your ability to pay rent?"
+                                  Detail="{Binding LimitRent}" />
+                        <TextCell Text="How much money do you have?"
+                                  Detail="{Binding MoneyValue}" />
+                        <TextCell Text="" />
+                        <TextCell Text="Emergency Contact Name"
+                                  Detail="{Binding EmergencyName}" />
+                        <TextCell Text="Emergency Contact Phone"
+                                  Detail="{Binding EmergencyPhone}" />
+                        <TextCell Text="" />
+                        <TextCell Text="How did you find out about this vacancy?"
+                                  Detail="{Binding HearSource}" />
+                        <TextCell Text="Why should we rent to you?"
+                                  Detail="{Binding WhyRent}" />
+                    </TableSection>
                 </TableRoot>
             </TableView>
         </ScrollView>
