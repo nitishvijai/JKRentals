@@ -142,31 +142,27 @@ namespace JKRentals
 
         private async void SubmitBtn_Clicked(object sender, EventArgs e)
         {
-            string confirm = await DisplayActionSheet("Are you ready to submit your application?", "Yes", "No");
+            SaveData();
 
-            if (confirm == "Yes")
+            ep1.WriteToTempFile();
+
+            bool allgood = ep1.app.CheckForCompletion();
+
+            if (!allgood)
             {
-                SaveData();
-
-                bool allgood = ep1.app.CheckForCompletion();
-
-                if (!allgood)
-                {
-                    await DisplayAlert("Incomplete Form", "You have not entered values for some fields. Please go back and review your answers.", "OK");
-                    return;
-                }
-
-                bool phonegood = ep1.app.IsPhoneNumber(EmergencyPhone.Text);
-
-                if (!phonegood)
-                {
-                    await DisplayAlert("Invalid Format", "A phone number is in an invalid format.", "OK");
-                    return;
-                }
-
-                await Navigation.PushAsync(new ReviewPage(ep1.app));
+                await DisplayAlert("Incomplete Form", "You have not entered values for some fields. Please go back and review your answers.", "OK");
+                return;
             }
-            else { /* discard action and do nothing */ }
+
+            bool phonegood = ep1.app.IsPhoneNumber(EmergencyPhone.Text);
+
+            if (!phonegood)
+            {
+                await DisplayAlert("Invalid Format", "A phone number is in an invalid format.", "OK");
+                return;
+            }
+
+            await Navigation.PushAsync(new EntryPage5(ep1));
         }
     }
 }

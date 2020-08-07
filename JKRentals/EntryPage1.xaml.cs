@@ -150,7 +150,8 @@ namespace JKRentals
                                         app.EmergencyName + '\n' +
                                         app.EmergencyPhone + '\n' +
                                         app.HearSource + '\n' +
-                                        app.WhyRent);
+                                        app.WhyRent + '\n' +
+                                        app.AddlInfo);
             }
         }
 

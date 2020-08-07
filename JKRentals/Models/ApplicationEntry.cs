@@ -97,6 +97,10 @@ namespace JKRentals.Models
         public string HearSource { get; set; }
         public string WhyRent { get; set; }
 
+        // -------------------------------- PAGE 5 -------------------------------- 
+
+        public string AddlInfo { get; set; }
+
 
         // Application check
         private Boolean AppComplete { get; set; }
@@ -121,6 +125,10 @@ namespace JKRentals.Models
             else if (CurrentPage == 4)
             {
                 requiredFields = new string[] { StayDuration, Pets, EmergencyName, EmergencyPhone, LimitRent, MoneyValue, HearSource, WhyRent };
+            }
+            else if (CurrentPage == 5)
+            {
+                return true;
             }
 
             foreach (string item in requiredFields)
