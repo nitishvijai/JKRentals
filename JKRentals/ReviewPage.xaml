@@ -159,6 +159,12 @@
                                   Detail="{Binding HearSource}" />
                         <TextCell Text="Why should we rent to you?"
                                   Detail="{Binding WhyRent}" />
+                        <TextCell Text="" />
+                    </TableSection>
+                    <TableSection Title="ADDITIONAL INFORMATION">
+                        <TextCell Text="Additional Info:"
+                                  Detail="{Binding AddlInfo}" />
+                        <TextCell Text="" />
                     </TableSection>
                 </TableRoot>
             </TableView>
