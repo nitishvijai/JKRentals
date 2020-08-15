@@ -91,5 +91,10 @@ namespace JKRentals
         {
 
         }
+
+        private void EmpPhoneNo_Completed(object sender, EventArgs e)
+        {
+            EmpPhoneNo.Text = ep1.app.FormatPhone(EmpPhoneNo.Text);
+        }
     }
 }

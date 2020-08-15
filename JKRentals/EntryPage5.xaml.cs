@@ -51,15 +51,8 @@ namespace JKRentals
 
         private async void SubmitBtn_Clicked(object sender, EventArgs e)
         {
-            string confirm = await DisplayActionSheet("Are you ready to submit your application?", "Yes", "No");
-
-            if (confirm == "Yes")
-            {
-                SaveData();
-
-                await Navigation.PushAsync(new ReviewPage(ep1.app));
-            }
-            else { /* discard action and do nothing */ }
+            SaveData();
+            await Navigation.PushAsync(new AgreePage(ep1));
         }
     }
 }

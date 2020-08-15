@@ -25,6 +25,8 @@ namespace JKRentals
             thisApp = ep1.app;
             ep1.app.CurrentPage = 2;
             thisApp.CurrentPage = 2;
+            DesiredDate.SetValue(DatePicker.MinimumDateProperty, DateTime.Now);
+
             PopulateTextBoxes(thisApp);
         }
 
@@ -147,6 +149,21 @@ namespace JKRentals
             }
 
             await Navigation.PushAsync(new EntryPage3(ep1));
+        }
+
+        private void LandlordPhone_Completed(object sender, EventArgs e)
+        {
+            LandlordPhone.Text = ep1.app.FormatPhone(LandlordPhone.Text);
+        }
+
+        private void LandlordPhone1_Completed(object sender, EventArgs e)
+        {
+            LandlordPhone1.Text = ep1.app.FormatPhone(LandlordPhone1.Text);
+        }
+
+        private void LandlordPhone2_Completed(object sender, EventArgs e)
+        {
+            LandlordPhone2.Text = ep1.app.FormatPhone(LandlordPhone2.Text);
         }
     }
 }

@@ -30,13 +30,56 @@ namespace JKRentals
         {
             HouseLife.Text = ep1.app.StayDuration;
             Pets.Text = ep1.app.Pets;
+
             Evictions.Value = ep1.app.NumEvictions;
+            NumEvictions.Text = Evictions.Value.ToString();
+
             Felonies.Value = ep1.app.NumFelonies;
+            NumFelonies.Text = Felonies.Value.ToString();
+
             BrokeLease.IsToggled = ep1.app.BrokeLease;
+            if (BrokeLease.IsToggled)
+            {
+                YN_BrokeLease.Text = "Yes";
+            }
+            else
+            {
+                YN_BrokeLease.Text = "No";
+            }
+
             Smoke.IsToggled = ep1.app.Smoke;
+            if (Smoke.IsToggled)
+            {
+                YN_Smoke.Text = "Yes";
+            }
+            else
+            {
+                YN_Smoke.Text = "No";
+            }
+
             CheckAcct.IsToggled = ep1.app.CheckAcct;
+            if (CheckAcct.IsToggled)
+            {
+                YN_CheckAcct.Text = "Yes";
+            }
+            else
+            {
+                YN_CheckAcct.Text = "No";
+            }
+
             Vehicles.Value = ep1.app.NumVehicles;
+            NumVehicles.Text = Vehicles.Value.ToString();
+
             AmtReady.IsToggled = ep1.app.AmtReady;
+            if (AmtReady.IsToggled)
+            {
+                YN_AmtReady.Text = "Yes";
+            }
+            else
+            {
+                YN_AmtReady.Text = "No";
+            }
+
             LimitRent.Text = ep1.app.LimitRent;
             MoneyValue.Text = ep1.app.MoneyValue;
             EmergencyName.Text = ep1.app.EmergencyName;
@@ -163,6 +206,11 @@ namespace JKRentals
             }
 
             await Navigation.PushAsync(new EntryPage5(ep1));
+        }
+
+        private void EmergencyPhone_Completed(object sender, EventArgs e)
+        {
+            EmergencyPhone.Text = ep1.app.FormatPhone(EmergencyPhone.Text);
         }
     }
 }

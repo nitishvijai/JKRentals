@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="JKRentals.AgreePage" NavigationPage.HasBackButton="True" NavigationPage.HasNavigationBar="True" Title="Agreement (6 of 6)">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Please read this agreement carefully and type your name below if you agree."
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Subtitle"
+                   Margin="0,10,0,0" />
+
+            <Editor IsReadOnly="True"
+                    AutoSize="TextChanges"
+                    HorizontalOptions="FillAndExpand"
+                    InputTransparent="True" x:Name="EULA" HeightRequest="200"/>
+
+            <Label Text="The Applicant authorizes release of all information to Landlord and agrees that the information provided in this rental application is true and correct."
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10,0"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Subtitle"
+                   FontAttributes="Bold" />
+
+            <Label Text="Applicant: "
+                   Margin="20,20,0,20"
+                   x:Name="NamePlaceHolder" />
+
+            <Label Text="Today's Date: "
+                   Margin="20,0,0,20"
+                   x:Name="DatePlaceHolder" />
+
+            <Button x:Name="ReturnBtn"
+                    Text="Save for Later"
+                    Grid.Row="12"
+                    Margin="10,0" />
+            <Button x:Name="SubmitBtn"
+                    Text="Review Application"
+                    Margin="10,0"
+                    Clicked="SubmitBtn_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

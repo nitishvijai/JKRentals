@@ -61,7 +61,7 @@
                 <Entry x:Name="HouseLife"
                        Placeholder="Required"
                        Grid.Row="1"
-                       Grid.Column="2" />
+                       Grid.Column="2" ClearButtonVisibility="WhileEditing"/>
 
                 <Label Text="What pets do you have?:"
                        Grid.Row="2"
@@ -70,7 +70,7 @@
                 <Entry x:Name="Pets"
                        Placeholder="Required"
                        Grid.Row="2"
-                       Grid.Column="2" />
+                       Grid.Column="2" ClearButtonVisibility="WhileEditing"/>
 
                 <Label Text="# of evictions filed on you:"
                        Grid.Row="3"
@@ -223,7 +223,8 @@
                 <Editor x:Name="MoneyValue"
                         Grid.Row="13"
                         Grid.Column="2"
-                        Placeholder="Required" />
+                        Placeholder="Required" 
+                        Keyboard="Telephone"/>
 
                 <Label Text=""
                        Grid.Row="14"
@@ -246,7 +247,9 @@
                         Grid.Row="16"
                         Grid.Column="2"
                         Placeholder="Required"
-                        Keyboard="Telephone" />
+                        Keyboard="Telephone" 
+                        Completed="EmergencyPhone_Completed"
+                        Unfocused="EmergencyPhone_Completed"/>
 
                 <Label Text=""
                        Grid.Row="17"
@@ -279,7 +282,7 @@
                         Grid.Column="1"
                         Grid.ColumnSpan="2" />
                 <Button x:Name="SubmitBtn"
-                        Text="Continue (Submit Debug)"
+                        Text="Next Page"
                         Grid.Row="23"
                         Grid.Column="1"
                         Grid.ColumnSpan="2" 

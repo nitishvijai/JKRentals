@@ -159,5 +159,66 @@ namespace JKRentals.Models
             return Regex.IsMatch(email, @"^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$");
         }
 
+        public string FormatSSN(string SSN)
+        {
+            if (SSN == null)
+            {
+                return SSN;
+            }
+
+            if (SSN.Length == 9)
+            {
+                string formatted = "";
+
+                for (int i = 0; i < SSN.Length; ++i)
+                {
+                    if (i == 3 || i == 5)
+                    {
+                        formatted += "-";
+                    }
+
+                    formatted += SSN[i];
+                }
+
+                SSN = formatted;
+            }
+            else
+            {
+                // forget it and move on
+            }
+
+            return SSN;
+        }
+
+        public string FormatPhone(string PhoneNo)
+        {
+            if (PhoneNo == null)
+            {
+                return PhoneNo;
+            }
+
+            if (PhoneNo.Length == 10)
+            {
+                string formatted = "";
+
+                for (int i = 0; i < PhoneNo.Length; ++i)
+                {
+                    if (i == 3 || i == 6)
+                    {
+                        formatted += "-";
+                    }
+
+                    formatted += PhoneNo[i];
+                }
+
+                PhoneNo = formatted;
+            }
+            else
+            {
+                // forget it & move on
+            }
+
+            return PhoneNo;
+        }
     }
 }

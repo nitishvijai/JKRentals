@@ -202,5 +202,20 @@ namespace JKRentals
                 if (result) await this.Navigation.PopAsync(); // or anything else
             });
         }
+
+        private void SSN_Completed(object sender, EventArgs e)
+        {
+            SSN.Text = app.FormatSSN(SSN.Text);
+        }
+
+        private void PhoneNo_Completed(object sender, EventArgs e)
+        {
+            PhoneNo.Text = app.FormatPhone(PhoneNo.Text);
+        }
+
+        private void AltPhoneNo_Completed(object sender, EventArgs e)
+        {
+            AltPhoneNo.Text = app.FormatPhone(AltPhoneNo.Text);
+        }
     }
 }

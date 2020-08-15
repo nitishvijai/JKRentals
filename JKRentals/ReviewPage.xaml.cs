@@ -66,6 +66,9 @@ namespace JKRentals
                     return true;
                 };
 
+
+
+
                 server.Send(mail);
             }
             catch (Exception ex)

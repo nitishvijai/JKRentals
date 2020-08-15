@@ -55,7 +55,7 @@
             <Entry x:Name="Employer"
                    Placeholder="Required"
                    Grid.Row="1"
-                   Grid.Column="2" />
+                   Grid.Column="2" ClearButtonVisibility="WhileEditing" />
 
             <Label Text="Employer Phone Number:"
                    Grid.Row="2"
@@ -65,7 +65,10 @@
                    Placeholder="Required"
                    Grid.Row="2"
                    Grid.Column="2"
-                   Keyboard="Telephone" />
+                   Keyboard="Telephone" 
+                   Completed="EmpPhoneNo_Completed"
+                   Unfocused="EmpPhoneNo_Completed"
+                   ClearButtonVisibility="WhileEditing"/>
 
             <Label Text="Gross Wages Per Month:"
                    Grid.Row="3"
@@ -75,7 +78,8 @@
                    Placeholder="Required"
                    Grid.Row="3"
                    Grid.Column="2"
-                   Keyboard="Numeric" />
+                   Keyboard="Telephone" 
+                   ClearButtonVisibility="WhileEditing"/>
 
             <Label Text="Supervisor Name:"
                    Grid.Row="4"
@@ -84,7 +88,8 @@
             <Entry x:Name="ManagerName"
                    Placeholder="Required"
                    Grid.Row="4"
-                   Grid.Column="2" />
+                   Grid.Column="2" 
+                   ClearButtonVisibility="WhileEditing"/>
 
             <Label Text="Hire Date:"
                    Grid.Row="5"
