@@ -6,7 +6,7 @@ Previously, apartment rentals involved filling out a long sheet of paper. In ord
 
 By offering a mobile application and entering experience, we're making it even easier to fill out your application and send to a landlord for faster review. 
 
-## Planned features for v1 (tentative) - to be released August 2020
+## Planned features for v1 (tentative) - to be released September/October 2020
 1. Faster application entry on mobile
 2. Application info stored on device for later use
 3. Quicker email to landlord (w/ encryption to protect sensitive data)
