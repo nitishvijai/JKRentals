@@ -1,15 +1,12 @@
-﻿using System;
+﻿using JKRentals.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using JKRentals.Models;
-using System.Reflection;
-
 
 namespace JKRentals
 {
@@ -19,24 +16,18 @@ namespace JKRentals
         public ApplicationEntry thisApp;
         EntryPage1 ep1;
 
-
-
         public AgreePage(EntryPage1 p1)
         {
-            
-            var assembly = typeof(AgreePage).GetTypeInfo().Assembly;
-            
+            InitializeComponent();
             ep1 = p1;
             thisApp = ep1.app;
             ep1.app.CurrentPage = 6;
             thisApp.CurrentPage = 6;
-            
 
-            EULA.Text = text;
+            InternetExplorer.Source = "https://nitishv.dev/assets/doc/JKRentals_EULA.html";
 
             NamePlaceHolder.Text = "Applicant: " + thisApp.FirstName + " " + thisApp.LastName;
             DatePlaceHolder.Text = "Today's Date: " + DateTime.Today.ToShortDateString();
-            InitializeComponent();
         }
 
         protected override void OnAppearing()
@@ -44,6 +35,18 @@ namespace JKRentals
             ep1.app.CurrentPage = 6;
             thisApp.CurrentPage = 6;
             base.OnAppearing();
+        }
+
+        private void AgreeSwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (AgreeSwitch.IsToggled)
+            {
+                SubmitBtn.IsEnabled = true;
+            }
+            else
+            {
+                SubmitBtn.IsEnabled = false;
+            }
         }
 
         private async void SubmitBtn_Clicked(object sender, EventArgs e)

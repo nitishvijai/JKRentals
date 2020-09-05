@@ -12,10 +12,11 @@
 
   <ItemGroup>
     <None Remove="RentalAgreement.txt" />
+    <None Remove="Resources\JKRentalsEULA.html" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="RentalAgreement.txt" />
+    <EmbeddedResource Include="Resources\JKRentalsEULA.html" />
   </ItemGroup>
 
   <ItemGroup>

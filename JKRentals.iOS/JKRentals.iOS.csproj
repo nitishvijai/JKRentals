@@ -132,4 +132,7 @@
       <Name>JKRentals</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\JKRentalsEULA.html" />
+  </ItemGroup>
 </Project>

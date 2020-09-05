@@ -71,7 +71,7 @@ namespace JKRentals
 
                 server.Send(mail);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("Failed", "Email failed to send. Please try again.", "OK");
             }
